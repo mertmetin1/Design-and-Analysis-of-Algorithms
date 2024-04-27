@@ -1,4 +1,4 @@
-
+Algorithm's Debugged Examples :
 1. **BFClosestPairPoints.py**:
    - This file contains an algorithm to find the closest pair of points in a set of points using the brute force method.
 ![image](https://github.com/mertmetin1/Design-and-Analysis-of-Algorithms/assets/98667673/0d9e0e9d-d80e-4b18-967d-21574bb4119f)
