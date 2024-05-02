@@ -42,7 +42,8 @@ def BruteForceKnapsack(weights, values, capacity):
 weights = [7, 3, 4, 5]  # Example weights of items
 values = [42, 12, 40, 25]  # Example values of items
 capacity = 10  # Example capacity of knapsack
-
+"""Maximum total value: 65
+Selected items: [2, 3]"""
 max_value, selected_items = BruteForceKnapsack(weights, values, capacity)
 print("Maximum total value:", max_value)
 print("Selected items:", selected_items)

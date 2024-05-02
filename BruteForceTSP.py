@@ -27,7 +27,7 @@ def BruteForceTSP(distances):
         # Update shortest_distance and shortest_tour if current tour is shorter
         if total_distance < shortest_distance:
             shortest_distance = total_distance
-            shortest_tour = tour
+            shortest_tour = tour   
     
     return shortest_distance, shortest_tour
 
@@ -37,7 +37,9 @@ distances = [
     [1, 0, 6, 4],
     [15, 7, 0, 8],
     [6, 3, 12, 0]
-]  # Example distances between cities
+] 
+"""Shortest total distance: 21
+Shortest tour: [0, 2, 3, 1, 0]"""
 
 shortest_distance, shortest_tour = BruteForceTSP(distances)
 print("Shortest total distance:", shortest_distance)

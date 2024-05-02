@@ -23,8 +23,8 @@ def josephus_recursive(people, k, idx=0):
     return josephus_recursive(people, k, idx)
 
 # Josephus problemi için örnek kullanım
-n = 30 # Toplam insan sayısı
-k = 6  # Her kıyasımda ölen kişi sayısı
+n = 12 # Toplam insan sayısı
+k = 3  # Her kıyasımda ölen kişi sayısı
 
 people = list(range(1, n + 1))
 result = josephus_recursive(people, k)

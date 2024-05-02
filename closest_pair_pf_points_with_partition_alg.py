@@ -61,4 +61,5 @@ def closest_pair(points):
 
 # Örnek kullanım:
 points = [(2, 3), (12, 30), (40, 50), (5, 1), (12, 10), (3, 4)]
+"""En yakın çift: (inf, ((2, 3), (3, 4)))"""
 print("En yakın çift:", closest_pair(points))

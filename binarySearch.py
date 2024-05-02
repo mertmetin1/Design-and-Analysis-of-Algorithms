@@ -41,7 +41,7 @@ def binary_search_recursive(arr, target, left, right):
 
 # Örnek kullanım
 # Rasgele bir dizi oluştur
-arr = random.sample(range(1, 99990000000000), 9999000)
+arr = random.sample(range(1, 990), 90)
 # Oluşturulan diziyi sırala
 arr.sort()
 

@@ -27,4 +27,5 @@ def BruteForceClosestPair(P):
 # Example usage:
 points = [(0, 0), (1, 1), (2, 2), (3, 3)]  # Example points
 closest_distance = BruteForceClosestPair(points)
+print("porints:",points)
 print("Distance between closest pair of points:", closest_distance)

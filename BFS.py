@@ -38,7 +38,7 @@ node1.add_neighbor(node2)
 node1.add_neighbor(node3)
 node2.add_neighbor(node4)
 node3.add_neighbor(node5)
-
+"""1 2 3 4 5 """
 # BFS gezinmesini başlat
 print("BFS gezinmesi:")
 bfs(node1)

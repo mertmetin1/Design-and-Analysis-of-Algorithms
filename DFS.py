@@ -43,7 +43,7 @@ node1.add_neighbor(node3)
 node2.add_neighbor(node4)
 node3.add_neighbor(node5)
 node3.add_neighbor(node1)
-
+"""1 2 4 3 5"""
 
 # DFS gezinmesini başlatıyoruz
 print("DFS gezinmesi:")

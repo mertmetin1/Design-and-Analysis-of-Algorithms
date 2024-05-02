@@ -1,55 +1,39 @@
-from termcolor import colored
+def quicksort(A, baslangic, son):
+    if baslangic < son:
+        # Partition işlemi
+        pivot_index = lomuto_partition(A, baslangic, son)
+        #pivot_index = hoare_partition(A, baslangic, son)
+        # Pivotun etrafındaki alt dizileri sırala
+        quicksort(A, baslangic, pivot_index - 1)
+        quicksort(A, pivot_index + 1, son)
 
-def partition(arr, low, high):
-    pivot_index = high
-    pivot = arr[pivot_index]
-    print(colored("Pivot:", "green"), colored(pivot, "green"), "(index:", colored(pivot_index, "green"), ")")
-    print(colored("Array:", "blue"), arr)
-    print(colored("Low index:", "cyan"), colored(low, "cyan"))
-    print(colored("High index:", "cyan"), colored(high, "cyan"))
-
+def lomuto_partition(arr, low, high):
+    pivot = arr[high]
     i = low - 1
     for j in range(low, high):
-        print()
-        print(colored(f"Step {j-low+1}", "yellow"))
         if arr[j] < pivot:
             i += 1
-            print(colored("\tArray:", "blue"), arr)
-            print(colored(f"\tComparing current element ({arr[j]}) with pivot ({pivot})", "yellow"))
             arr[i], arr[j] = arr[j], arr[i]
-            print(colored(f"\tSwapping current element ({arr[i]}) with element ({arr[j]})", "magenta"))
-            print(colored("\tArray:", "blue"), arr)
-            print(colored(f"\tLow pointer: {i}", "cyan"))
-            print(colored(f"\tHigh pointer: {j}", "cyan"))
-        else:
-            print(colored(f"\tComparing current element ({arr[j]}) with pivot ({pivot})", "red"))
-            print(colored("\tArray:", "red"), arr)
-            print(colored(f"\tLow pointer: {i}", "cyan"))
-            print(colored(f"\tHigh pointer: {j}", "cyan"))
-
-    arr[i + 1], arr[pivot_index] = arr[pivot_index], arr[i + 1]
-    print(colored("\tArray after partitioning:", "cyan"), arr)
-    print(colored(f"\tSwapping current element ({arr[i + 1]}) with pivot ({pivot})", "magenta"))
-    print()
-
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
     return i + 1
 
-def quicksort(arr, low, high):
-    if low < high:
-        pi = partition(arr, low, high)
-        print(colored("\tPartition index:", "yellow"), colored(pi, "yellow"))
-        print(colored("\tLeft partition:", "yellow"), colored(arr[low:pi], "yellow"))
-        print(colored("\tRight partition:", "yellow"), colored(arr[pi + 1:high + 1], "yellow"))
-        print()
+def hoare_partition(arr, low, high):
+    pivot = arr[low]
+    i = low - 1
+    j = high + 1
+    while True:
+        i += 1
+        while arr[i] < pivot:
+            i += 1
+        j -= 1
+        while arr[j] > pivot:
+            j -= 1
+        if i >= j:
+            return j
+        arr[i], arr[j] = arr[j], arr[i]
 
-        quicksort(arr, low, pi - 1)
-        quicksort(arr, pi + 1, high)
-
-# Örnek bir liste
-arr = [4, 7, 2, 5, 1, 6, 3]
-
-# Sıralama işlemini çağır
-print(colored("Initial array:", "red"), arr)
-quicksort(arr, 0, len(arr) - 1)
-
-print(colored("Sorted array:", "red"), arr)
+# Örnek kullanım
+A = [3, 6, 8, 10, 1, 2, 1]
+print("Sıralanmamış Dizi:", A)
+quicksort(A, 0, len(A) - 1)
+print("Sıralanmış Dizi:", A)
